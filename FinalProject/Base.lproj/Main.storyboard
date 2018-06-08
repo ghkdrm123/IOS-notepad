@@ -22,7 +22,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="PzH-dk-ODD">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="azC-E8-6eT"/>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="search" id="www-y3-ukU"/>
                             <barButtonItem systemItem="add" id="0Wm-bD-gNX"/>
