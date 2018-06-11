@@ -8,11 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AddDelegate {
+    
+    
+    
+    func sendMemo(controller: AddController, message: Memo) {
+        print(message.content)
+        print(message.date)
+        print(message.title)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +29,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let addController = segue.destination as! AddController
+        addController.delegate = self
+    }
     
 }
 

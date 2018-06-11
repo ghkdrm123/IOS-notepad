@@ -173,6 +173,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if __has_feature(modules)
 @import UIKit;
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -184,6 +185,22 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Wnullability"
 
 SWIFT_MODULE_NAMESPACE_PUSH("FinalProject")
+@class UITextField;
+@class UITextView;
+@class NSBundle;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC12FinalProject13AddController")
+@interface AddController : UIViewController
+@property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified memoTitle;
+@property (nonatomic, strong) IBOutlet UITextView * _Null_unspecified memoContent;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (IBAction)save_btn:(id _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UIWindow;
 @class UIApplication;
 
@@ -199,13 +216,19 @@ SWIFT_CLASS("_TtC12FinalProject11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSBundle;
-@class NSCoder;
+
+SWIFT_CLASS("_TtC12FinalProject4Memo")
+@interface Memo : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+@class UIStoryboardSegue;
 
 SWIFT_CLASS("_TtC12FinalProject14ViewController")
 @interface ViewController : UIViewController
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
