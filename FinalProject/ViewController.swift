@@ -9,12 +9,13 @@
 import UIKit
 
 var memoList = Array<Memo>()
+var databasePath = String()
 
 class TableViewController: UITableViewController {
     
     @IBOutlet var tvListView: UITableView!
     
-    var databasePath = String()
+    
     
     
     override func viewDidLoad() {
@@ -26,35 +27,68 @@ class TableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         
-        //        let fileMgr = FileManager.default
-        //        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        //        //let dirPath = fileMgr.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        //
-        //        //let docsDir = dirPath[0]
-        //
-        //
-        //
-        //        //databasePath = docsDir.appending("/contacts.db")
-        //        databasePath = dirPath.appendingPathComponent("contracts.db").path!
-        //        print(databasePath)
-        //
-        //        if !fileMgr.fileExists(atPath: databasePath) {
-        //            // DB 접속
-        //            let contactDB = FMDatabase(path: databasePath)
-        //
-        //            if contactDB.open() {
-        //                let sql_stmt = "CREATE TABLE IF NOT EXISTS CONTACTS ( ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, AGE INTEGER )"
-        //                if !contactDB.executeStatements(sql_stmt){
-        //                    print("Error : contactDB execute Fail, \(contactDB.lastError())")
-        //                }
-        //                contactDB.close()
-        //
-        //            } else {
-        //                print("Error : contactDB open Fail, \(contactDB.lastError())")
-        //            }
-        //        } else {
-        //            print("contactDB is exist")
-        //        }
+        let filemgr = FileManager.default
+        let dirPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        
+        let docsDir = dirPaths[0] as String
+        
+        databasePath = docsDir.appending("/test.db")
+       
+        if !filemgr.fileExists(atPath: databasePath){
+            let contactDB = FMDatabase(path: databasePath)
+            
+            if contactDB.open() {
+                let sql_stmt = "CREATE TABLE IF NOT EXISTS TEST (ID INTEGER PRIMARY KEY AUTOINCREMENT, TITLE TEXT, DATE TEXT, CONTENT TEXT)"
+                if !contactDB.executeStatements(sql_stmt) {
+                    print("Error \(contactDB.lastErrorMessage())")
+                }
+                
+                contactDB.close()
+            } else {
+                print("Error \(contactDB.lastErrorMessage())")
+            }
+        }
+        let contactDB = FMDatabase(path: databasePath)
+        if contactDB.open(){
+            let querySQL = "SELECT * FROM TEST"
+            let result: FMResultSet? = contactDB.executeQuery(querySQL, withArgumentsIn: [])
+            
+            // next 메서드는 일치하는 레코드가 적어도 하나 이상인지 확인하기 위함
+            while(result?.next() == true){
+                print("while")
+
+                let title = result?.string(forColumn: "title")
+                let date = result?.string(forColumn: "date")
+                let content = result?.string(forColumn: "content")
+
+                let newMemo: Memo = Memo(title: title!, date: date!, content: content!)
+                memoList.append(newMemo)
+            }
+            for i in memoList{
+                print(i.title)
+                print(i.date)
+                print(i.content)
+            }
+            print(memoList.count)
+            contactDB.close()
+        }
+    }
+    
+    func saveData(saveDate: Memo) {
+        let contactDB = FMDatabase(path: databasePath)
+        
+        if contactDB.open() {
+            let insertSQL = "INSERT INTO CONTACTS (name, address, phone) VALUES ('\(saveDate.title)', '\(saveDate.date)', '\(saveDate.content)')"
+            
+            let result = contactDB.executeUpdate(insertSQL, withArgumentsIn: [])
+            
+            if !result {
+               
+                print("Error \(contactDB.lastErrorMessage())")
+            }
+        } else {
+            print("Error \(contactDB.lastErrorMessage())")
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -151,4 +185,5 @@ class TableViewController: UITableViewController {
         }
     }
     
+
 }

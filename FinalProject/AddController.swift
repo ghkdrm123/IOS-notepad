@@ -29,11 +29,28 @@ class AddViewController: UIViewController {
         memoList.append(newMemo)
         //itemsImageFile.append("clock.png")
         tfAddItem.text=""
+        
+        let contactDB = FMDatabase(path: databasePath)
+        
+        if contactDB.open() {
+            let insertSQL = "INSERT INTO TEST (title, date, content) VALUES ('\(newMemo.title)', '\(newMemo.date)', '\(newMemo.content)')"
+            
+            let result = contactDB.executeUpdate(insertSQL, withArgumentsIn: [])
+            
+            if !result {
+                
+                print("Error \(contactDB.lastErrorMessage())")
+            }
+            print("succes")
+            
+            contactDB.close()
+        } else {
+            print("Error \(contactDB.lastErrorMessage())")
+        }
+        
         _ = navigationController?.popViewController(animated: true)
     }
-    @IBAction func btnAddItem(_ sender: UIButton) {
-        
-    }
+
     
     /*
      // MARK: - Navigation

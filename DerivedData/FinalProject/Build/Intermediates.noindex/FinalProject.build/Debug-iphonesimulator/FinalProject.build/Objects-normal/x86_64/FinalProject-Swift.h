@@ -189,7 +189,6 @@ SWIFT_MODULE_NAMESPACE_PUSH("FinalProject")
 @class UITextField;
 @class UITextView;
 @class UIBarButtonItem;
-@class UIButton;
 @class NSBundle;
 @class NSCoder;
 
@@ -200,7 +199,6 @@ SWIFT_CLASS("_TtC12FinalProject17AddViewController")
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (IBAction)save_Btn:(UIBarButtonItem * _Nonnull)sender;
-- (IBAction)btnAddItem:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
