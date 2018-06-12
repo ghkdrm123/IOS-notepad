@@ -174,6 +174,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_feature(modules)
 @import UIKit;
 @import ObjectiveC;
+@import Foundation;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -187,16 +188,19 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 SWIFT_MODULE_NAMESPACE_PUSH("FinalProject")
 @class UITextField;
 @class UITextView;
+@class UIBarButtonItem;
+@class UIButton;
 @class NSBundle;
 @class NSCoder;
 
-SWIFT_CLASS("_TtC12FinalProject13AddController")
-@interface AddController : UIViewController
-@property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified memoTitle;
-@property (nonatomic, strong) IBOutlet UITextView * _Null_unspecified memoContent;
+SWIFT_CLASS("_TtC12FinalProject17AddViewController")
+@interface AddViewController : UIViewController
+@property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified tfAddItem;
+@property (nonatomic, strong) IBOutlet UITextView * _Null_unspecified AddContent;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
-- (IBAction)save_btn:(id _Nonnull)sender;
+- (IBAction)save_Btn:(UIBarButtonItem * _Nonnull)sender;
+- (IBAction)btnAddItem:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -217,18 +221,40 @@ SWIFT_CLASS("_TtC12FinalProject11AppDelegate")
 @end
 
 
+SWIFT_CLASS("_TtC12FinalProject20DetailViewController")
+@interface DetailViewController : UIViewController
+@property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified memoTitle;
+@property (nonatomic, strong) IBOutlet UITextView * _Null_unspecified memoContent;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (IBAction)save_Btn:(UIBarButtonItem * _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC12FinalProject4Memo")
 @interface Memo : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
+@class UITableView;
+@class UITableViewCell;
 @class UIStoryboardSegue;
 
-SWIFT_CLASS("_TtC12FinalProject14ViewController")
-@interface ViewController : UIViewController
+SWIFT_CLASS("_TtC12FinalProject19TableViewController")
+@interface TableViewController : UITableViewController
+@property (nonatomic, strong) IBOutlet UITableView * _Null_unspecified tvListView;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+- (void)viewWillAppear:(BOOL)animated;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)tableView:(UITableView * _Nonnull)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (NSString * _Nullable)tableView:(UITableView * _Nonnull)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

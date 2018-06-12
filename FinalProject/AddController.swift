@@ -1,45 +1,50 @@
 //
-//  addController.swift
-//  FinalProject
+//  AddViewController.swift
+//  Table
 //
-//  Created by admin16 on 2018. 6. 11..
-//  Copyright © 2018년 admin16. All rights reserved.
+//  Created by bglee on 2017. 10.
+//  Copyright © 2017년 bglee. All rights reserved.
 //
 
 import UIKit
-import Foundation
 
-protocol AddDelegate {
-    func sendMemo(controller: AddController, message: Memo)
-}
-
-class AddController: UIViewController {
-    @IBOutlet var memoTitle: UITextField!
-    @IBOutlet var memoContent: UITextView!
+class AddViewController: UIViewController {
     
-    let now = NSData()
-    var delegate:AddDelegate?
-
+    @IBOutlet var tfAddItem: UITextField!
+    @IBOutlet var AddContent: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
     
-    @IBAction func save_btn(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-        var newMemo: Memo = Memo(title: memoTitle.text!, date: "123", content: memoContent.text)
-        
-        
-        if delegate != nil{
-            delegate?.sendMemo(controller: self, message: newMemo)
-        }
+    @IBAction func save_Btn(_ sender: UIBarButtonItem) {
+        var newMemo: Memo = Memo(title: tfAddItem.text!, date: "123", content: AddContent.text!)
+        memoList.append(newMemo)
+        //itemsImageFile.append("clock.png")
+        tfAddItem.text=""
+        _ = navigationController?.popViewController(animated: true)
+    }
+    @IBAction func btnAddItem(_ sender: UIButton) {
         
     }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
+
+
