@@ -52,7 +52,6 @@ class TableViewController: UITableViewController {
             
             // next 메서드는 일치하는 레코드가 적어도 하나 이상인지 확인하기 위함
             while(result?.next() == true){
-                print("while")
 
                 let title = result?.string(forColumn: "title")
                 let date = result?.string(forColumn: "date")
@@ -61,12 +60,6 @@ class TableViewController: UITableViewController {
                 let newMemo: Memo = Memo(title: title!, date: date!, content: content!)
                 memoList.append(newMemo)
             }
-            for i in memoList{
-                print(i.title)
-                print(i.date)
-                print(i.content)
-            }
-            print(memoList.count)
             contactDB.close()
         }
     }
@@ -116,19 +109,11 @@ class TableViewController: UITableViewController {
         cell.lblTitle.text = memoList[(indexPath as NSIndexPath).row].title
         cell.lblDate.text = memoList[(indexPath as NSIndexPath).row].date
         
-        //cell.imageView?.image = UIImage(named: itemsImageFile[(indexPath as NSIndexPath).row])
         
         return cell
     }
     
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
     
     
     // Override to support editing the table view.
@@ -147,7 +132,6 @@ class TableViewController: UITableViewController {
                     
                     print("Error \(contactDB.lastErrorMessage())")
                 }
-                print("succes")
                 
                 contactDB.close()
             } else {
@@ -193,12 +177,11 @@ class TableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        print(segue.identifier)
         if segue.identifier == "sgDetail" {
             let cell = sender as! UITableViewCell
             let indexPath = self.tvListView.indexPath(for: cell)
             let detailView = segue.destination as! DetailViewController
-            print(memoList[((indexPath as NSIndexPath?)?.row)!].title)
+            
             detailView.reciveItem(memoList[((indexPath as NSIndexPath?)?.row)!].title)
         }
     }

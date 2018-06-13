@@ -34,12 +34,10 @@ class AddViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         var dateString = dateFormatter.string(from: today as Date)
-        print(dateString) //"2016년 2월 21일"
         
         
         var newMemo: Memo = Memo(title: tfAddItem.text!, date: dateString, content: AddContent.text!)
         memoList.append(newMemo)
-        //itemsImageFile.append("clock.png")
         tfAddItem.text=""
         
         let contactDB = FMDatabase(path: databasePath)
