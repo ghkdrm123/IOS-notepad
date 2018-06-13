@@ -26,11 +26,10 @@ class SearchViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searCell", for: indexPath) as! MySearchTableCell
         
-        cell.textLabel?.text = searchlist[(indexPath as NSIndexPath).row].title
-        cell.detailTextLabel?.text = searchlist[(indexPath as NSIndexPath).row].date
-        //cell.imageView?.image = UIImage(named: itemsImageFile[(indexPath as NSIndexPath).row])
+        cell.lblTitle.text = searchlist[(indexPath as NSIndexPath).row].title
+        cell.lblDate.text = searchlist[(indexPath as NSIndexPath).row].date
         
         return cell
     }

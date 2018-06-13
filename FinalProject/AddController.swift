@@ -24,11 +24,20 @@ class AddViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     @IBAction func save_Btn(_ sender: UIBarButtonItem) {
         if (tfAddItem.text == ""){
             tfAddItem.text = "제목없는 문서"
         }
-        var newMemo: Memo = Memo(title: tfAddItem.text!, date: "123", content: AddContent.text!)
+        
+        let today = NSDate() //현재 시각 구하기
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        var dateString = dateFormatter.string(from: today as Date)
+        print(dateString) //"2016년 2월 21일"
+        
+        
+        var newMemo: Memo = Memo(title: tfAddItem.text!, date: dateString, content: AddContent.text!)
         memoList.append(newMemo)
         //itemsImageFile.append("clock.png")
         tfAddItem.text=""

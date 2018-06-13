@@ -15,9 +15,6 @@ class TableViewController: UITableViewController {
     
     @IBOutlet var tvListView: UITableView!
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -114,10 +111,10 @@ class TableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MyTableViewCell
         
-        cell.textLabel?.text = memoList[(indexPath as NSIndexPath).row].title
-        cell.detailTextLabel?.text = memoList[(indexPath as NSIndexPath).row].date
+        cell.lblTitle.text = memoList[(indexPath as NSIndexPath).row].title
+        cell.lblDate.text = memoList[(indexPath as NSIndexPath).row].date
         
         //cell.imageView?.image = UIImage(named: itemsImageFile[(indexPath as NSIndexPath).row])
         

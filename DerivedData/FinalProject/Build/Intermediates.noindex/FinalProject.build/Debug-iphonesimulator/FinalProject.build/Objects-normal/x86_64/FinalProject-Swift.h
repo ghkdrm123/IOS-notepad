@@ -236,8 +236,30 @@ SWIFT_CLASS("_TtC12FinalProject4Memo")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
+@class UILabel;
+
+SWIFT_CLASS("_TtC12FinalProject17MySearchTableCell")
+@interface MySearchTableCell : UITableViewCell
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified lblTitle;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified lblDate;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12FinalProject15MyTableViewCell")
+@interface MyTableViewCell : UITableViewCell
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified lblTitle;
+@property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified lblDate;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UITableView;
-@class UITableViewCell;
 @class UIStoryboardSegue;
 
 SWIFT_CLASS("_TtC12FinalProject20SearchViewController")
