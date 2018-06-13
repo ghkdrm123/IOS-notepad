@@ -117,6 +117,8 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         
         cell.textLabel?.text = memoList[(indexPath as NSIndexPath).row].title
+        cell.detailTextLabel?.text = memoList[(indexPath as NSIndexPath).row].date
+        
         //cell.imageView?.image = UIImage(named: itemsImageFile[(indexPath as NSIndexPath).row])
         
         return cell
@@ -194,13 +196,13 @@ class TableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
+        print(segue.identifier)
         if segue.identifier == "sgDetail" {
             let cell = sender as! UITableViewCell
             let indexPath = self.tvListView.indexPath(for: cell)
             let detailView = segue.destination as! DetailViewController
-            print(((indexPath as NSIndexPath?)?.row)!)
-            detailView.reciveItem(((indexPath as NSIndexPath?)?.row)!)
+            print(memoList[((indexPath as NSIndexPath?)?.row)!].title)
+            detailView.reciveItem(memoList[((indexPath as NSIndexPath?)?.row)!].title)
         }
     }
     

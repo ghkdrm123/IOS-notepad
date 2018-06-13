@@ -25,6 +25,9 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func save_Btn(_ sender: UIBarButtonItem) {
+        if (tfAddItem.text == ""){
+            tfAddItem.text = "제목없는 문서"
+        }
         var newMemo: Memo = Memo(title: tfAddItem.text!, date: "123", content: AddContent.text!)
         memoList.append(newMemo)
         //itemsImageFile.append("clock.png")

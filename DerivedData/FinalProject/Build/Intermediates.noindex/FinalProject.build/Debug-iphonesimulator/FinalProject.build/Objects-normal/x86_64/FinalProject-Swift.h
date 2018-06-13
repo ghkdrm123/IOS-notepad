@@ -240,6 +240,24 @@ SWIFT_CLASS("_TtC12FinalProject4Memo")
 @class UITableViewCell;
 @class UIStoryboardSegue;
 
+SWIFT_CLASS("_TtC12FinalProject20SearchViewController")
+@interface SearchViewController : UITableViewController
+@property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified searchlbl;
+@property (nonatomic, strong) IBOutlet UITableView * _Null_unspecified searchTable;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
+- (void)viewWillAppear:(BOOL)animated;
+- (IBAction)searchBtn:(id _Nonnull)sender;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC12FinalProject19TableViewController")
 @interface TableViewController : UITableViewController
 @property (nonatomic, strong) IBOutlet UITableView * _Null_unspecified tvListView;
