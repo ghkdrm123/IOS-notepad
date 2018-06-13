@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7437AD3D20D09BB70014BBEA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437AD3C20D09BB70014BBEA /* SearchViewController.swift */; };
 		743A625D20CDF537007E9E1B /* AddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743A625C20CDF537007E9E1B /* AddController.swift */; };
 		74459BA920D059EF00CA2C41 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74459BA820D059EF00CA2C41 /* DetailViewController.swift */; };
 		74459BAE20D05A7100CA2C41 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 74459BAC20D05A7100CA2C41 /* libsqlite3.tbd */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7437AD3C20D09BB70014BBEA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		743A625C20CDF537007E9E1B /* AddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddController.swift; sourceTree = "<group>"; };
 		74459BA820D059EF00CA2C41 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = "../../../../Downloads/12장/본문실습/Table/Table/DetailViewController.swift"; sourceTree = "<group>"; };
 		74459BAC20D05A7100CA2C41 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -126,6 +128,7 @@
 				74DE673520C8BA2F0093E1B6 /* Info.plist */,
 				743A625C20CDF537007E9E1B /* AddController.swift */,
 				74C016FC20CF0F9100F49D86 /* Memo.swift */,
+				7437AD3C20D09BB70014BBEA /* SearchViewController.swift */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74DE672C20C8BA2F0093E1B6 /* ViewController.swift in Sources */,
+				7437AD3D20D09BB70014BBEA /* SearchViewController.swift in Sources */,
 				743A625D20CDF537007E9E1B /* AddController.swift in Sources */,
 				74459BA920D059EF00CA2C41 /* DetailViewController.swift in Sources */,
 				7445CF5F20D0610300CA2C41 /* FMDatabase.m in Sources */,

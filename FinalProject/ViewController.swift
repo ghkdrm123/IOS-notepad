@@ -136,9 +136,28 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            let contactDB = FMDatabase(path: databasePath)
+            print(indexPath.row)
+            
+            if contactDB.open() {
+                let insertSQL = "DELETE from TEST WHERE TITLE = '\(memoList[indexPath.row].title)'"
+                
+                let result = contactDB.executeUpdate(insertSQL, withArgumentsIn: [])
+                
+                if !result {
+                    
+                    print("Error \(contactDB.lastErrorMessage())")
+                }
+                print("succes")
+                
+                contactDB.close()
+            } else {
+                print("Error \(contactDB.lastErrorMessage())")
+            }
             memoList.remove(at: (indexPath as NSIndexPath).row)
             //itemsImageFile.remove(at: (indexPath as NSIndexPath).row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+           
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }

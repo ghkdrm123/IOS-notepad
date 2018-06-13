@@ -40,6 +40,7 @@ depends-top-level:
 - "UITableViewCell"
 - "UITableViewCellEditingStyle"
 - "UITableViewController"
+- !private "UnicodeScalarType"
 - "databasePath"
 - "memoList"
 - !private "print"
@@ -55,6 +56,7 @@ depends-member:
 - !private ["s23BidirectionalCollectionP", "count"]
 - ["s23BidirectionalCollectionP", "init"]
 - !private ["s23BidirectionalCollectionP", "remove"]
+- !private ["s23BidirectionalCollectionP", "row"]
 - !private ["s23BidirectionalCollectionP", "subscript"]
 - !private ["s23BidirectionalCollectionP", "title"]
 - !private ["Sb", "_getBuiltinLogicValue"]
@@ -112,10 +114,12 @@ depends-member:
 - !private ["s10CollectionP", "count"]
 - ["s10CollectionP", "init"]
 - !private ["s10CollectionP", "remove"]
+- !private ["s10CollectionP", "row"]
 - !private ["s10CollectionP", "subscript"]
 - !private ["s10CollectionP", "title"]
 - !private ["s10ComparableP", "appending"]
 - ["s10ComparableP", "init"]
+- !private ["s10ComparableP", "row"]
 - !private ["s28CustomDebugStringConvertibleP", "FMDatabase"]
 - !private ["s28CustomDebugStringConvertibleP", "FileManager"]
 - !private ["s28CustomDebugStringConvertibleP", "Memo"]
@@ -168,6 +172,7 @@ depends-member:
 - !private ["s17CustomReflectableP", "count"]
 - ["s17CustomReflectableP", "init"]
 - !private ["s17CustomReflectableP", "remove"]
+- !private ["s17CustomReflectableP", "row"]
 - !private ["s17CustomReflectableP", "subscript"]
 - !private ["s17CustomReflectableP", "title"]
 - !private ["s23CustomStringConvertibleP", "FMDatabase"]
@@ -220,6 +225,7 @@ depends-member:
 - !private ["s9DecodableP", "count"]
 - ["s9DecodableP", "init"]
 - !private ["s9DecodableP", "remove"]
+- !private ["s9DecodableP", "row"]
 - !private ["s9DecodableP", "subscript"]
 - !private ["12FinalProject20DetailViewControllerC", "reciveItem"]
 - !private ["s9EncodableP", "_getBuiltinLogicValue"]
@@ -228,6 +234,7 @@ depends-member:
 - !private ["s9EncodableP", "count"]
 - ["s9EncodableP", "init"]
 - !private ["s9EncodableP", "remove"]
+- !private ["s9EncodableP", "row"]
 - !private ["s9EncodableP", "subscript"]
 - !private ["s9EquatableP", "FMDatabase"]
 - !private ["s9EquatableP", "FileManager"]
@@ -278,6 +285,7 @@ depends-member:
 - !private ["s25ExpressibleByArrayLiteralP", "count"]
 - ["s25ExpressibleByArrayLiteralP", "init"]
 - !private ["s25ExpressibleByArrayLiteralP", "remove"]
+- !private ["s25ExpressibleByArrayLiteralP", "row"]
 - !private ["s25ExpressibleByArrayLiteralP", "subscript"]
 - !private ["s25ExpressibleByArrayLiteralP", "title"]
 - !private ["s25ExpressibleByArrayLiteralP", "userDomainMask"]
@@ -343,6 +351,7 @@ depends-member:
 - !private ["s8HashableP", "tvListView"]
 - !private ["s8HashableP", "viewDidLoad"]
 - ["s8HashableP", ""]
+- !private ["10Foundation9IndexPathV", "row"]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s25LosslessStringConvertibleP", "appending"]
 - ["s25LosslessStringConvertibleP", "init"]
@@ -356,6 +365,7 @@ depends-member:
 - !private ["s17MutableCollectionP", "count"]
 - ["s17MutableCollectionP", "init"]
 - !private ["s17MutableCollectionP", "remove"]
+- !private ["s17MutableCollectionP", "row"]
 - !private ["s17MutableCollectionP", "subscript"]
 - !private ["s17MutableCollectionP", "title"]
 - !private ["So8NSCodingP", "FMDatabase"]
@@ -510,6 +520,7 @@ depends-member:
 - !private ["s22RandomAccessCollectionP", "count"]
 - ["s22RandomAccessCollectionP", "init"]
 - !private ["s22RandomAccessCollectionP", "remove"]
+- !private ["s22RandomAccessCollectionP", "row"]
 - !private ["s22RandomAccessCollectionP", "subscript"]
 - !private ["s22RandomAccessCollectionP", "title"]
 - !private ["s26RangeReplaceableCollectionP", "append"]
@@ -524,6 +535,7 @@ depends-member:
 - !private ["s16RawRepresentableP", "fade"]
 - !private ["s16RawRepresentableP", "insert"]
 - !private ["s16RawRepresentableP", "userDomainMask"]
+- !private ["10Foundation20ReferenceConvertibleP", "row"]
 - !private ["So11FileManagerC19SearchPathDirectoryO", "documentDirectory"]
 - !private ["So11FileManagerC20SearchPathDomainMaskV", "userDomainMask"]
 - !private ["s8SequenceP", "append"]
@@ -531,6 +543,7 @@ depends-member:
 - !private ["s8SequenceP", "count"]
 - ["s8SequenceP", "init"]
 - !private ["s8SequenceP", "remove"]
+- !private ["s8SequenceP", "row"]
 - !private ["s8SequenceP", "subscript"]
 - !private ["s8SequenceP", "title"]
 - !private ["s10SetAlgebraP", "userDomainMask"]
@@ -918,6 +931,7 @@ depends-member:
 - !private ["s23_BidirectionalIndexableP", "count"]
 - ["s23_BidirectionalIndexableP", "init"]
 - !private ["s23_BidirectionalIndexableP", "remove"]
+- !private ["s23_BidirectionalIndexableP", "row"]
 - !private ["s23_BidirectionalIndexableP", "subscript"]
 - !private ["s23_BidirectionalIndexableP", "title"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "deleteRows"]
@@ -951,6 +965,7 @@ depends-member:
 - !private ["s10_IndexableP", "count"]
 - ["s10_IndexableP", "init"]
 - !private ["s10_IndexableP", "remove"]
+- !private ["s10_IndexableP", "row"]
 - !private ["s10_IndexableP", "subscript"]
 - !private ["s10_IndexableP", "title"]
 - !private ["s14_IndexableBaseP", "append"]
@@ -958,6 +973,7 @@ depends-member:
 - !private ["s14_IndexableBaseP", "count"]
 - ["s14_IndexableBaseP", "init"]
 - !private ["s14_IndexableBaseP", "remove"]
+- !private ["s14_IndexableBaseP", "row"]
 - !private ["s14_IndexableBaseP", "subscript"]
 - !private ["s14_IndexableBaseP", "title"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "FMDatabase"]
@@ -1003,6 +1019,7 @@ depends-member:
 - !private ["s17_MutableIndexableP", "count"]
 - ["s17_MutableIndexableP", "init"]
 - !private ["s17_MutableIndexableP", "remove"]
+- !private ["s17_MutableIndexableP", "row"]
 - !private ["s17_MutableIndexableP", "subscript"]
 - !private ["s17_MutableIndexableP", "title"]
 - !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
@@ -1011,11 +1028,13 @@ depends-member:
 - !private ["s21_ObjectiveCBridgeableP", "count"]
 - ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s21_ObjectiveCBridgeableP", "remove"]
+- !private ["s21_ObjectiveCBridgeableP", "row"]
 - !private ["s21_ObjectiveCBridgeableP", "subscript"]
 - !private ["s22_RandomAccessIndexableP", "append"]
 - !private ["s22_RandomAccessIndexableP", "count"]
 - ["s22_RandomAccessIndexableP", "init"]
 - !private ["s22_RandomAccessIndexableP", "remove"]
+- !private ["s22_RandomAccessIndexableP", "row"]
 - !private ["s22_RandomAccessIndexableP", "subscript"]
 - !private ["s22_RandomAccessIndexableP", "title"]
 - !private ["s26_RangeReplaceableIndexableP", "append"]
@@ -1053,6 +1072,7 @@ depends-nominal:
 - !private "So11FMResultSetC"
 - !private "So11FileManagerC"
 - "s8HashableP"
+- !private "10Foundation9IndexPathV"
 - "s25LosslessStringConvertibleP"
 - !private "12FinalProject4MemoC"
 - "s10MirrorPathP"
@@ -1072,6 +1092,7 @@ depends-nominal:
 - "s22RandomAccessCollectionP"
 - "s26RangeReplaceableCollectionP"
 - !private "s16RawRepresentableP"
+- !private "10Foundation20ReferenceConvertibleP"
 - !private "So11FileManagerC19SearchPathDirectoryO"
 - !private "So11FileManagerC20SearchPathDomainMaskV"
 - "s8SequenceP"
