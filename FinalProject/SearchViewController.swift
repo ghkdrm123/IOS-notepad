@@ -67,7 +67,6 @@ class SearchViewController: UITableViewController {
             let querySQL = "SELECT * FROM TEST WHERE TITLE = '\(str)'"
             let result: FMResultSet? = contactDB.executeQuery(querySQL, withArgumentsIn: [])
             
-            // next 메서드는 일치하는 레코드가 적어도 하나 이상인지 확인하기 위함
             while(result?.next() == true){
                 print("while")
                 
